@@ -14,23 +14,37 @@ import {
   GraduationCap,
   User,
   Zap,
-  Rocket
+  Rocket,
+  Menu,
+  X
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TechIcon from './TechIcon';
 import ThemeToggle from './ThemeToggle';
 import FloatingContact from './FloatingContact';
+import { useScreenSize } from '../hooks/useScreenSize';
 import '../styles/futuristic.css';
+import '../styles/responsive.css';
+import '../styles/utilities.css';
 
 const FuturisticPortfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isMobile, isTablet } = useScreenSize();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
   }, [isDarkTheme]);
+
+  // Fermer le menu mobile lors du redimensionnement
+  useEffect(() => {
+    if (!isMobile && !isTablet && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [isMobile, isTablet, isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,10 +103,15 @@ const FuturisticPortfolio = () => {
             className="nav-logo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('hero');
+            }}
           >
             🌌 ABRAHAM
           </motion.a>
           
+          {/* Navigation Desktop */}
           <div className="nav-links">
             {[
               { id: 'hero', label: 'Accueil', icon: <User size={16} /> },
@@ -114,10 +133,61 @@ const FuturisticPortfolio = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 {item.icon}
-                {item.label}
+                <span>{item.label}</span>
               </motion.a>
             ))}
           </div>
+
+          {/* Toggle Menu Mobile */}
+          <motion.button
+            className="nav-mobile-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
+
+          {/* Menu Mobile */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div 
+                className={`nav-mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="nav-mobile-links">
+                  {[
+                    { id: 'hero', label: 'Accueil', icon: <User size={20} /> },
+                    { id: 'experience', label: 'Expériences', icon: <Briefcase size={20} /> },
+                    { id: 'education', label: 'Formations', icon: <GraduationCap size={20} /> },
+                    { id: 'skills', label: 'Compétences', icon: <Zap size={20} /> },
+                    { id: 'projects', label: 'Projets', icon: <Rocket size={20} /> },
+                    { id: 'contact', label: 'Contact', icon: <Mail size={20} /> }
+                  ].map((item) => (
+                    <motion.a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className={`nav-mobile-link ${activeSection === item.id ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item.id);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      whileHover={{ x: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {item.icon}
+                      {item.label}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
 
