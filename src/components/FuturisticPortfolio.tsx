@@ -223,7 +223,7 @@ const FuturisticPortfolio = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.a
-                href="/cv-abraham-adodoh.pdf"
+                href="/cv_expert_it.pdf"
                 className="btn-futuristic btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -655,7 +655,7 @@ const FuturisticPortfolio = () => {
           >
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <motion.a
-                href="/cv-abraham-adodoh.pdf"
+                href="/cv_expert_it.pdf"
                 className="btn-futuristic btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
