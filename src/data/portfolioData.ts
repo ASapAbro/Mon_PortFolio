@@ -85,8 +85,8 @@ export const portfolioData = {
   },
   {
     title: "MyContact",
-    description: "Application mobile Android permettant de gérer et organiser ses contacts personnels et professionnels. Fonctionnalités complètes : ajout, modification, suppression, recherche et stockage local sécurisé.",
-    tech: ["Android", "Java", "SQLite", "Firebase"],
+    description: "Application web full-stack de gestion de contacts avec authentification JWT. Frontend React moderne avec navigation et notifications, backend Node.js/Express, base de données MongoDB Atlas. Documentation API Swagger intégrée.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Vercel"],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop",
     link: "https://mycontact-client.vercel.app/",
     github: "https://github.com/ASapAbro/Fil-Rouge.git",
