@@ -92,13 +92,27 @@ export const portfolioData = {
     github: "https://github.com/ASapAbro/Fil-Rouge.git",
   },
   {
+    title: "MyTasks",
+    description: "Application MERN Stack de gestion de tâches avec authentification sécurisée JWT. Frontend React 18 avec React Router et Vite, backend Node.js/Express déployé en serverless sur Vercel, base de données MongoDB Atlas. Interface moderne et intuitive pour organiser vos projets et tâches quotidiennes.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Vite", "Vercel", "REST API"],
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop",
+    link: "https://to-do-frnt.vercel.app/login",
+    github: "https://github.com/ASapAbro/To_do.git",
+  },
+  {
     title: "Dernier Metro",
     description: "Application mobile fournissant les horaires du dernier métro et optimisant les déplacements urbains. Intégration d’API pour les trajets en temps réel et notifications en cas de perturbation.",
     tech: ["Android", "Java", "API REST", "Google Maps API"],
     image: "https://images.unsplash.com/photo-1519861538059-8f1432f346ef?w=800&h=500&fit=crop",
     link: "#",
-    github: "https://github.com/ASapAbro",
-  }
+    github: "https://github.com/ASapAbro",  },
+  {
+    title: "Système de Gestion de Bibliothèque",
+    description: "Application Python en ligne de commande pour gérer une bibliothèque complète. Évolution progressive d'une version procédurale vers une architecture orientée objet avec héritage et polymorphisme. Gestion de 4 types de supports (livres classiques, audio, BD, ebooks) avec emprunt/retour et recherche avancée.",
+    tech: ["Python 3.13", "POO", "Héritage", "Git", "CLI"],
+    image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=500&fit=crop",
+    link: "#",
+    github: "https://github.com/ASapAbro/Python_Gestion_biblioth-que_",  }
 ]
 };
 
