@@ -103,7 +103,7 @@ export const portfolioData = {
     title: "Dernier Metro",
     description: "Application mobile fournissant les horaires du dernier métro et optimisant les déplacements urbains. Intégration d’API pour les trajets en temps réel et notifications en cas de perturbation.",
     tech: ["Android", "Java", "API REST", "Google Maps API"],
-    image: "https://images.unsplash.com/photo-1519861538059-8f1432f346ef?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=500&fit=crop",
     link: "#",
     github: "https://github.com/ASapAbro",  },
   {
@@ -112,7 +112,15 @@ export const portfolioData = {
     tech: ["Python 3.13", "POO", "Héritage", "Git", "CLI"],
     image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=500&fit=crop",
     link: "#",
-    github: "https://github.com/ASapAbro/Python_Gestion_biblioth-que_",  }
+    github: "https://github.com/ASapAbro/Python_Gestion_biblioth-que_",  },
+  {
+    title: "SportRadaria — Plateforme de sport local",
+    description: "Application web fullstack de découverte et d'organisation d'activités sportives locales développée de A à Z. Intègre l'authentification sécurisée JWT (access + refresh token), widget météo géolocalisé via OpenWeatherMap, carte interactive Leaflet.js, recherche multi-critères, notifications temps réel Socket.io, et profil utilisateur avec upload d'avatar. Déploiement containerisé avec Docker sur Railway/Vercel.",
+    tech: ["React 19", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "Socket.io", "Docker", "Leaflet.js", "OpenWeatherMap API"],
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=500&fit=crop",
+    link: "#",
+    github: "https://github.com/ASapAbro/sportradaria",
+  }
 ]
 };
 
